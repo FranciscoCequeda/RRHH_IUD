@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package com.mycompany.rrh_iud;
+package com.mycompany.rrhh_iud;
 
 import com.mycompany.Controller.FuncionarioController;
 import com.mycompany.Controller.SexoController;
@@ -257,7 +257,7 @@ public class JFrameRrhh extends javax.swing.JFrame {
                 tipodDocSelect.setEstado(tipodoc.getEstado());
             }
 
-            System.out.println("tipoDocSeleccionado:" + tipodDocSelect);
+            System.out.println("tipoDocSeleccionado: " + tipodDocSelect);
 
         });
 
@@ -267,7 +267,7 @@ public class JFrameRrhh extends javax.swing.JFrame {
                 sexoSelected = (Sexo) evntsex.getItem();
             }
 
-            System.out.println("sexoSeleccionado:" + sexoSelected);
+            System.out.println("sexoSeleccionado: " + sexoSelected);
         });
 
         cbxEstadoCilvil.addItemListener(evntes -> {
@@ -276,24 +276,15 @@ public class JFrameRrhh extends javax.swing.JFrame {
                 estadoCivilSelected = (EstadoCivil) evntes.getItem();
             }
 
-            System.out.println("eCivilSeleccionado:" + estadoCivilSelected);
+            System.out.println("eCivilSeleccionado: " + estadoCivilSelected);
         });
 
     }
 
     private void listenerCombosEditar() {
-
         tipodDocSelect = (TipoDocumento) cbxTipoDocE.getSelectedItem();
-        System.out.println("tipoDocSeleccionado:" + tipodDocSelect);
-
         sexoSelected = (Sexo) cbxSexoE.getSelectedItem();
-
-        System.out.println("sexoSeleccionado:" + sexoSelected);
-
         estadoCivilSelected = (EstadoCivil) cbxEstadoCilvilE.getSelectedItem();
-
-        System.out.println("eCivilSeleccionado:" + estadoCivilSelected);
-
     }
 
     /**
@@ -789,11 +780,7 @@ public class JFrameRrhh extends javax.swing.JFrame {
             return;
         }
 
-//        if (txtNombre2.getText().trim().length() == 0) {
-//            JOptionPane.showMessageDialog(null, "Digite Nombre2");
-//            txtNombre2.requestFocus();
-//            return;
-//        }
+
         if (txtApellido1.getText().trim().length() == 0) {
             JOptionPane.showMessageDialog(null, "Digite Apellido1");
             txtApellido1.requestFocus();
@@ -887,19 +874,12 @@ public class JFrameRrhh extends javax.swing.JFrame {
             return;
         }
 
-        System.out.println(tipodDocSelect);
-        System.out.println(tipodDocSelect.getClass());
-        System.out.println("seletected: " + cbxTipoDocE.getSelectedItem() + " index: " + cbxTipoDocE.getSelectedIndex());
-
         if (tipodDocSelect == null) {
             JOptionPane.showMessageDialog(null, "Seleccione Tipo Documento!");
             cbxTipoDoc.requestFocus();
             return;
         }
 
-        System.out.println(sexoSelected);
-        System.out.println(sexoSelected.getClass());
-        System.out.println("seletected: " + cbxSexoE.getSelectedItem() + " index: " + cbxSexoE.getSelectedIndex());
 
         if (sexoSelected == null) {
             JOptionPane.showMessageDialog(null, "Seleccione Sexo!");
@@ -907,9 +887,6 @@ public class JFrameRrhh extends javax.swing.JFrame {
             return;
         }
 
-        System.out.println(estadoCivilSelected);
-        System.out.println(estadoCivilSelected.getClass());
-        System.out.println("seletected: " + cbxEstadoCilvilE.getSelectedItem() + " index: " + cbxEstadoCilvilE.getSelectedIndex());
 
         if (estadoCivilSelected == null) {
             JOptionPane.showMessageDialog(null, "Seleccione Estado Civil!");
@@ -929,11 +906,6 @@ public class JFrameRrhh extends javax.swing.JFrame {
             return;
         }
 
-        if (txtNombre2E.getText().trim().length() == 0) {
-            JOptionPane.showMessageDialog(null, "Digite Nombre2");
-            txtNombre2.requestFocus();
-            return;
-        }
         if (txtApellido1E.getText().trim().length() == 0) {
             JOptionPane.showMessageDialog(null, "Digite Apellido1");
             txtApellido1.requestFocus();

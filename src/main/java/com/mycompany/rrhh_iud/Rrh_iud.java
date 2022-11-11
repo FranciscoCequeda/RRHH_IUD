@@ -1,4 +1,4 @@
-package com.mycompany.rrh_iud;
+package com.mycompany.rrhh_iud;
 
 import com.mycompany.Controller.FuncionarioController;
 import com.mycompany.domain.Funcionario;
