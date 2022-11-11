@@ -90,7 +90,7 @@ CREATE TABLE IF NOT EXISTS parentescos (
   parentesco VARCHAR(45) NOT NULL,
   estado TINYINT(1) NOT NULL DEFAULT 1,
   fecha_creacion TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (id));
+  PRIMARY KEY(id));
 
 -- Tabla grupos familiares
 CREATE TABLE IF NOT EXISTS grupos_familiares (

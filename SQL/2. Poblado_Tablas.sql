@@ -82,4 +82,3 @@ VALUES(1, 1, '50959498', 'RAMONA', '','PINEDA', 'SEQUEDA', '1975-05-09', 1, 2, '
       (1, 2, '1063304475', 'JORGE', 'LUIS', 'JARABA', 'PINEDA', '2015-03-15', 1, 1, 'Montelibano', '3154124774', 7);
 
 SELECT * FROM grupos_familiares;
-      
