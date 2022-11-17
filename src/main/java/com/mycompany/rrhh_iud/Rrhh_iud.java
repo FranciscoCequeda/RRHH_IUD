@@ -10,7 +10,7 @@ import java.util.Scanner;
 /**
  * @author Francisco
  */
-public class Rrh_iud {
+public class Rrhh_iud {
 
     public static void getFuncionarios(FuncionarioController funcionarioController) {
         try {

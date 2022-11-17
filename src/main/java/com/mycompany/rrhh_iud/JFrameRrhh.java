@@ -15,6 +15,7 @@ import com.mycompany.domain.TipoDocumento;
 import java.sql.SQLException;
 import java.util.Date;
 import java.util.List;
+import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -282,9 +283,51 @@ public class JFrameRrhh extends javax.swing.JFrame {
     }
 
     private void listenerCombosEditar() {
-        tipodDocSelect = (TipoDocumento) cbxTipoDocE.getSelectedItem();
-        sexoSelected = (Sexo) cbxSexoE.getSelectedItem();
-        estadoCivilSelected = (EstadoCivil) cbxEstadoCilvilE.getSelectedItem();
+
+        cbxTipoDocE.addItemListener(evnt -> {
+            if (evnt.getStateChange() == evnt.SELECTED) {
+
+                JComboBox comboBox = (JComboBox) evnt.getSource();
+
+                tipodDocSelect = new TipoDocumento();
+
+                tipodDocSelect = (TipoDocumento) comboBox.getSelectedItem();
+            }
+
+            System.out.println("tipoDocSeleccionado: " + tipodDocSelect);
+
+        });
+
+        cbxEstadoCilvilE.addItemListener(evnt -> {
+            if (evnt.getStateChange() == evnt.SELECTED) {
+
+                JComboBox comboBox = (JComboBox) evnt.getSource();
+
+                estadoCivilSelected = new EstadoCivil();
+
+                estadoCivilSelected = (EstadoCivil) comboBox.getSelectedItem();
+            }
+
+            System.out.println("estadocivilSelected: " + estadoCivilSelected);
+
+        });
+        cbxSexoE.addItemListener(evnt -> {
+            if (evnt.getStateChange() == evnt.SELECTED) {
+
+                JComboBox comboBox = (JComboBox) evnt.getSource();
+
+                sexoSelected = new Sexo();
+
+                sexoSelected = (Sexo) comboBox.getSelectedItem();
+            }
+
+            System.out.println("sexoSelected: " + sexoSelected);
+
+        });
+
+//        tipodDocSelect = (TipoDocumento) cbxTipoDocE.getSelectedItem();
+//        sexoSelected = (Sexo) cbxSexoE.getSelectedItem();
+//        estadoCivilSelected = (EstadoCivil) cbxEstadoCilvilE.getSelectedItem();
     }
 
     /**
@@ -780,7 +823,6 @@ public class JFrameRrhh extends javax.swing.JFrame {
             return;
         }
 
-
         if (txtApellido1.getText().trim().length() == 0) {
             JOptionPane.showMessageDialog(null, "Digite Apellido1");
             txtApellido1.requestFocus();
@@ -834,6 +876,7 @@ public class JFrameRrhh extends javax.swing.JFrame {
             funcionarioController.createFuncionario(funcionario);
             listarFuncionarios();
             limpiarCampos();
+            limpiarCamposEdit();
             JOptionPane.showMessageDialog(null, "Funcionario creado exitosamente!");
         } catch (SQLException e) {
             e.printStackTrace();
@@ -880,13 +923,11 @@ public class JFrameRrhh extends javax.swing.JFrame {
             return;
         }
 
-
         if (sexoSelected == null) {
             JOptionPane.showMessageDialog(null, "Seleccione Sexo!");
             cbxSexo.requestFocus();
             return;
         }
-
 
         if (estadoCivilSelected == null) {
             JOptionPane.showMessageDialog(null, "Seleccione Estado Civil!");

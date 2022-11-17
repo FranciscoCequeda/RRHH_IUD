@@ -9,7 +9,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>16</maven.compiler.source>
         <maven.compiler.target>16</maven.compiler.target>
-        <exec.mainClass>com.mycompany.rrh_iud.Rrh_iud</exec.mainClass>
+        <exec.mainClass>com.mycompany.rrhh_iud.Rrhh_iud</exec.mainClass>
     </properties>
     <dependencies>
         <dependency>
